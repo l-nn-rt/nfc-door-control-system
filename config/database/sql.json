@@ -1,0 +1,65 @@
+{
+    "url": "127.0.0.1:1337",
+    "auth": {
+        "password": {
+            "name": "password"
+        },
+        "permission": {
+            "name": "auth"
+        },
+        "groups": {
+            "member": {
+                "name": "groups"
+            },
+            "default": {
+                "read": ["admin"],
+                "write": ["admin"]
+            }
+        }
+    },
+    "midware": {
+        "credentials": {
+            "name": "test",
+            "password": "test1234"
+        }
+    },
+    "user": {
+        "location": {
+            "name": "tecoTest.dbo.user"
+        },
+        "nfcToken": {
+            "name": "nfcToken"
+        },
+        "name": {
+            "name": "name"
+        },
+        "identifier": {
+            "name": "name"
+        }
+    },
+    "eventSubscriber": {
+        "location": {
+            "name": "tecoTest.dbo.eventSubscriber"
+        },
+        "identifier": {
+            "name": "endpoint"
+        },
+        "event": {
+            "name": "event"
+        },
+        "endpoint": {
+            "name": "endpoint"
+        },
+        "label": {
+            "name": "label"
+        }
+    },
+    "microcontroller": {
+        "location": {
+            "name": "tecoTest.dbo.doorController"
+        },
+        "endpoint": {
+            "name": "endpoint"
+        }
+    }
+}

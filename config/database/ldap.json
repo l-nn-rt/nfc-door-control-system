@@ -1,0 +1,52 @@
+{
+  "url": "ldap://127.0.0.1:10389",
+  "midware": {
+    "credentials": {
+      "name": "uid=admin,ou=system",
+      "password": "secret"
+    }
+  },
+  "user": {
+    "location": {
+      "name": "ou=users,dc=example,dc=com"
+    },
+    "nfcToken": {
+      "name": "nfcToken"
+    },
+    "name": {
+      "name": "cn"
+    },
+    "identifier": {
+      "name": "cn"
+    }
+  },
+  "eventSubscriber": {
+    "location": {
+      "name": "ou=eventSubscribers,dc=example,dc=com"
+    },
+    "identifier": {
+      "name": "endpoint"
+    },
+    "type": {
+      "name": "objectClass",
+      "value": "eventsubscriber"
+    },
+    "event": {
+      "name": "eventtype"
+    },
+    "endpoint": {
+      "name": "endpoint"
+    },
+    "label": {
+      "name": "displayName"
+    }
+  },
+  "microcontroller": {
+    "location": {
+      "name": "ou=Microcontroller,dc=example,dc=com"
+    },
+    "endpoint": {
+      "name": "endpoint"
+    }
+  }
+}

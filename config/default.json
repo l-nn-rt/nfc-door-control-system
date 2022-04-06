@@ -1,0 +1,34 @@
+{
+    "port": 5000,
+    "hostname": "localhost",
+
+    "basePath": "/api",
+    "userPath": "/users",
+    "eventPath": "/events",
+    "cameraPath": "/camera",
+    "doorPath": "/door",
+
+    "sessionMaxAge": 86400000,
+
+    "whitelist": ["https://192.168.178.85:4201", "https://dc.local/"],
+
+    "doorMicrocontroller": {
+        "psk": {
+            "name": "psk",
+            "value": "1234"
+        },
+        "endpoint": {
+            "name": "endpoint",
+            "value": "https://dc.local"
+        },
+        "seed": "1234",
+        "openPath": "/door/",
+        "updateNfcTokenPath": "/token/",
+        "deleteNfcTokenPath": "/token/",
+        "getValidationPath": "/token/"
+    },
+
+    "rtspUrlH": "rtsp://administrator:test1234@192.168.178.111:554/stream1",
+    "rtspUrlL": "rtsp://administrator:test1234@192.168.178.111:554/stream2",
+    "database": "ldap"
+}
