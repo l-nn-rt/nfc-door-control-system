@@ -72,5 +72,8 @@ export const ERROR_MESSAGES: Dictionary = {
     },
     PROPERTY_MANDATORY: {
         EN: 'There has to be a property to fetch.'
+    },
+    DATABASE_ERROR_MESSAGE: {
+        EN: 'database error message'
     }
 };

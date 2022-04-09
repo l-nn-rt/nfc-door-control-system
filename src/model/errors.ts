@@ -117,7 +117,9 @@ export class ReachDatabaseError extends ResponseError {
     constructor(msg?: string) {
         super(
             LanguageService.getInstance().translate(ERROR_MESSAGES.REACH_DATABASE) + msg
-                ? ' SQL error message:' + msg
+                ? ` ${LanguageService.getInstance().translate(
+                      ERROR_MESSAGES.DATABASE_ERROR_MESSAGE
+                  )}:` + msg
                 : '',
             562
         );
