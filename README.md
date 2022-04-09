@@ -11,13 +11,12 @@
 
 ### LDAP
 
-At first you need to create an LDAP parent node for the Event-Subscriber, the Microcontroller at the door and the users.
+At first you need to create an LDAP parent node for the Event-Subscriber and the users.
 
 Then create the following ldap attributes:
 
 -   endpoint
 -   eventType
--   psk
 -   nfcToken
 
 From these attributes you can now build the following classes:
@@ -28,9 +27,6 @@ From these attributes you can now build the following classes:
     -   endpoint
     -   eventType
     -   displayName
--   doorController
-    -   endpoint
-    -   psk
 
 #### Config
 
@@ -81,14 +77,6 @@ Follow the JSON schema:
         "label": {
             "name": "displayName"
         }
-    },
-    "microcontroller": {
-        "location": {
-            "name": "[cn of the microcontroller parent node]"
-        },
-        "endpoint": {
-            "name": "[endpoint attribute name]"
-        }
     }
 }
 ```
@@ -97,10 +85,8 @@ Follow the JSON schema:
 
 ### SQL
 
-Create 3 Tables:
+Create 2 Tables:
 
--   doorController
-    -   endpoint `varchar(MAX)`
 -   eventSubscriber
     -   endpoint `varchar(MAX)`
     -   label `varchar(MAX)`
@@ -191,14 +177,6 @@ create `./config/sql.json` and follow following schema:
         },
         "label": {
             "name": "[label column name]"
-        }
-    },
-    "microcontroller": {
-        "location": {
-            "name": "[sqlServer].[database].[microcontroller Table name]"
-        },
-        "endpoint": {
-            "name": "[endpoint column name]"
         }
     }
 }

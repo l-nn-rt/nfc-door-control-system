@@ -53,13 +53,5 @@
         "label": {
             "name": "label"
         }
-    },
-    "microcontroller": {
-        "location": {
-            "name": "tecoTest.dbo.doorController"
-        },
-        "endpoint": {
-            "name": "endpoint"
-        }
     }
 }

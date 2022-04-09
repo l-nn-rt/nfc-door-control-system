@@ -40,13 +40,5 @@
     "label": {
       "name": "displayName"
     }
-  },
-  "microcontroller": {
-    "location": {
-      "name": "ou=Microcontroller,dc=example,dc=com"
-    },
-    "endpoint": {
-      "name": "endpoint"
-    }
   }
 }

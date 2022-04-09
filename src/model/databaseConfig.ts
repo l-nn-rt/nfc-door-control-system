@@ -40,8 +40,4 @@ export interface DatabaseConfig {
         endpoint: DatabaseEntryProperty<Url>;
         label: DatabaseEntryProperty<Name>;
     };
-    microcontroller: {
-        location: DatabaseLocation;
-        endpoint: DatabaseEntryProperty<Url>;
-    };
 }
