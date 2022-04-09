@@ -58,22 +58,6 @@ export class DatabaseService {
         return DatabaseService.instance;
     }
 
-    /**
-     * Sets the url of the microcontroller at the door.
-     * @param databaseConnection {@link DatabaseConnection} to be used.
-     * @returns Promise with eventually occurring errors.
-     */
-    public async setDoor(databaseConnection: DatabaseConnection): Promise<void> {
-        let url: DatabaseEntryProperty<Url> = {
-            ...this._config.microcontroller.endpoint
-        } as DatabaseEntryProperty<Url>;
-        url.value = DoorSingleton.getInstance().microcontroller.endpoint;
-        let microcontrollerLocation: DatabaseLocation = {
-            ...this._config.microcontroller.location
-        } as DatabaseLocation;
-
-        return databaseConnection.setProperty(url, microcontrollerLocation);
-    }
 
     /**
      * Requests all {@link Username}s.
