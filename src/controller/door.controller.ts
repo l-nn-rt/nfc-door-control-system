@@ -18,6 +18,7 @@ import { DatabaseFactory } from '../database/databaseFactory';
  * Refreshes the nfc tokens at the door microcontroller in a given time period
  *
  * @author Lennart Rak
+ * @author Gregor Peters
  * @version 1.0
  */
 export class DoorController {
@@ -71,6 +72,11 @@ export class DoorController {
      * @param response the response object for the API call
      */
     public async open(request: Request, response: Response): Promise<void> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         return new Promise((resolve) => {
             HttpService.getInstance()
                 .post(
@@ -97,35 +103,6 @@ export class DoorController {
     }
 
     /**
-     * Updates the endpoint of the {@link DoorSingleton}
-     *
-     * @param request the request object from the API call.
-     * Requires body.endpoint to set the door microcontroller
-     * @param response the response object for the API call
-     */
-    public async setDoorMicrocontroller(request: Request, response: Response): Promise<void> {
-        return new Promise((resolve) => {
-            try {
-                DatabaseService.getInstance()
-                    .setDoor(response.locals.databaseConnection)
-                    .then(() => {
-                        //update endpoint only on success
-                        this._doorSingleton.microcontroller.endpoint = request.body.endpoint;
-                        response.status(200).json({});
-                        resolve();
-                    })
-                    .catch((error) => {
-                        errorHandling(error, response);
-                        resolve();
-                    });
-            } catch (error) {
-                errorHandling(error, response);
-                resolve();
-            }
-        });
-    }
-
-    /**
      * Updates a {@link NfcToken}
      *
      * @param newToken the new {@link NfcToken}
@@ -133,6 +110,11 @@ export class DoorController {
      * Is not required if a completely new token should be inserted
      */
     public async updateNfcToken(newToken: NfcToken[], oldToken?: NfcToken): Promise<void> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         if (!newToken || newToken.length < 1) return new Promise((resolve, reject) => reject());
         let body: {};
         if (oldToken) {
@@ -186,6 +168,11 @@ export class DoorController {
      * @param deleteAll true if all {@link NfcToken} should be deleted, false otherwise
      */
     public async deleteNfcToken(token: NfcToken[], deleteAll?: boolean): Promise<void> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         let body: {};
         if (deleteAll) {
             body = {
@@ -230,6 +217,11 @@ export class DoorController {
     }
 
     private async getDoorControllerHash(): Promise<Hash> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         return new Promise((resolve, reject) => {
             /*
             console.log(
