@@ -96,34 +96,6 @@ export class DoorController {
     }
 
     /**
-     * Updates the endpoint of the {@link DoorSingleton}
-     *
-     * @param request the request object from the API call.
-     * Requires body.endpoint to set the door microcontroller
-     * @param response the response object for the API call
-     */
-    public async setDoorMicrocontroller(request: Request, response: Response) {
-        if (!this.connection) {
-            this.connection = HttpService.getInstance().getConnection(
-                this._doorSingleton.microcontroller.endpoint.toString()
-            );
-        }
-        this._doorSingleton.microcontroller.endpoint = request.body.endpoint;
-        try {
-            DatabaseService.getInstance()
-                .setDoor(response.locals.databaseConnection)
-                .then(() => {
-                    response.status(200).json({});
-                })
-                .catch((error) => {
-                    errorHandling(error, response);
-                });
-        } catch (error) {
-            errorHandling(error, response);
-        }
-    }
-
-    /**
      * Updates a {@link NfcToken}
      *
      * @param newToken the new {@link NfcToken}
