@@ -6,7 +6,7 @@ import { Hash, NfcToken } from 'shared-utilities';
 
 import { DoorSingleton } from '../model/doorSingleton.model';
 import { HttpService } from '../services/http.service';
-import { DoorOpenError, errorHandling } from '../model/errors';
+import { DoorConnectError, errorHandling } from '../model/errors';
 import { UserController } from './user.controller';
 import { HttpsConnection } from 'src/model/httpsConnection';
 import { DatabaseService } from '../database/database.service';
@@ -18,6 +18,7 @@ import { DatabaseFactory } from '../database/databaseFactory';
  * Refreshes the nfc tokens at the door microcontroller in a given time period
  *
  * @author Lennart Rak
+ * @author Gregor Peters
  * @version 1.0
  */
 export class DoorController {
@@ -27,7 +28,7 @@ export class DoorController {
 
     private readonly checkDoorControllerTime: number = 24 * 60 * 60 * 1000;
     private readonly checkDoorControllerAfterFailureTime: number = 500000;
-    private connection: HttpsConnection;
+    private connection?: HttpsConnection;
 
     private readonly doorConfig: DoorConfig;
 
@@ -71,6 +72,11 @@ export class DoorController {
      * @param response the response object for the API call
      */
     public async open(request: Request, response: Response) {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         HttpService.getInstance()
             .post(
                 this._doorSingleton.microcontroller.endpoint.toString() + this.doorConfig.openPath,
@@ -85,7 +91,7 @@ export class DoorController {
                 response.status(value.status).json(value.body);
             })
             .catch(() => {
-                return errorHandling(new DoorOpenError(), response);
+                return errorHandling(new DoorConnectError(), response);
             });
     }
 
@@ -97,6 +103,11 @@ export class DoorController {
      * @param response the response object for the API call
      */
     public async setDoorMicrocontroller(request: Request, response: Response) {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         this._doorSingleton.microcontroller.endpoint = request.body.endpoint;
         try {
             DatabaseService.getInstance()
@@ -120,6 +131,11 @@ export class DoorController {
      * Is not required if a completely new token should be inserted
      */
     public async updateNfcToken(newToken: NfcToken[], oldToken?: NfcToken): Promise<void> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         if (!newToken || newToken.length < 1) return new Promise((resolve, reject) => reject());
         let body: {};
         if (oldToken) {
@@ -173,6 +189,11 @@ export class DoorController {
      * @param deleteAll true if all {@link NfcToken} should be deleted, false otherwise
      */
     public async deleteNfcToken(token: NfcToken[], deleteAll?: boolean): Promise<void> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         let body: {};
         if (deleteAll) {
             body = {
@@ -217,6 +238,11 @@ export class DoorController {
     }
 
     private async getDoorControllerHash(): Promise<Hash> {
+        if (!this.connection) {
+            this.connection = HttpService.getInstance().getConnection(
+                this._doorSingleton.microcontroller.endpoint.toString()
+            );
+        }
         return new Promise((resolve, reject) => {
             console.log(
                 this._doorSingleton.microcontroller.endpoint.toString() +
