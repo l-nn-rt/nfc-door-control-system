@@ -1,17 +1,17 @@
 import {LdapConnection} from "../ldapConnection";
-import databaseConfigMock from "../../model/__mocks__/databaseConfig";
-import {Config} from "../../model/config.model";
-import ldap from "../../../__mocks__/ldapjs";
-import {EntryNotFound, InvalidCredentialsError, ReachDatabaseError, UnknownError} from "../../model/errors";
-import {DatabaseCredentials} from "../databaseCredentials";
-import {DatabaseEntry} from "../databaseEntry";
-import {DatabaseEntryProperty} from "../databaseEntryProperty";
-import {DatabaseLocation} from "../databaseLocation";
+import databaseConfigMock from "../../../model/__mocks__/databaseConfig";
+import {Config} from "../../../model/config.model";
+import ldap from "../../../../__mocks__/ldapjs";
+import {EntryNotFound, InvalidCredentialsError, ReachDatabaseError, UnknownError} from "../../../model/errors";
+import {DatabaseCredentials} from "../../../model/database/databaseCredentials";
+import {DatabaseEntry} from "../../../model/database/databaseEntry";
+import {DatabaseEntryProperty} from "../../../model/database/databaseEntryProperty";
+import {DatabaseLocation} from "../../../model/database/databaseLocation";
 import {Change, Error, ErrorCallback} from "ldapjs";
-import {LanguageService} from "../../services/language.service";
-import {ERROR_MESSAGES} from "../../res/error.messages";
+import {LanguageService} from "../../../services/language.service";
+import {ERROR_MESSAGES} from "../../../res/error.messages";
 import databaseFactoryMock from "../__mocks__/databaseFactory";
-import {LdapFilter} from "../ldapFilter";
+import {LdapFilter} from "../../../model/database/ldapFilter";
 
 import {NfcToken, Identifier} from 'shared-utilities';
 import exp from "constants";

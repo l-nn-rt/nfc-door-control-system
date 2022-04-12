@@ -1,10 +1,10 @@
-import { InternalServerError } from './../../model/errors';
-import { DoorSingleton } from './../../model/doorSingleton.model';
-import { SqlFilter } from './../sqlFilter';
-import { DatabaseFilter } from './../databaseFilter';
-import { User } from './../../model/user.model';
-import { DatabaseConfig } from './../../model/databaseConfig';
-import { DatabaseEntry } from './../databaseEntry';
+import { InternalServerError } from '../../../model/errors';
+import { DoorSingleton } from '../../../model/doorSingleton.model';
+import { SqlFilter } from '../../../model/database/sqlFilter';
+import { DatabaseFilter } from '../../../model/database/databaseFilter';
+import { User } from '../../../model/user.model';
+import { DatabaseConfig } from '../../../model/databaseConfig';
+import { DatabaseEntry } from '../../../model/database/databaseEntry';
 import {
     Url,
     Hash,
@@ -16,12 +16,12 @@ import {
     Endpoint,
     SubscriberLabel
 } from 'shared-utilities';
-import { DatabaseEntryProperty } from '../databaseEntryProperty';
-import databaseFactoryMock from '../__mocks__/databaseFactory';
+import { DatabaseEntryProperty } from '../../../model/database/databaseEntryProperty';
+import databaseFactoryMock from '../../../controller/database/__mocks__/databaseFactory';
 import { DatabaseService } from '../database.service';
-import databaseConfigMock from '../../model/__mocks__/databaseConfig';
-import databaseConnectionMock from '../__mocks__/databaseConnection';
-import doorSingletonMock from '../../model/__mocks__/doorSingleton.mock';
+import databaseConfigMock from '../../../model/__mocks__/databaseConfig';
+import databaseConnectionMock from '../../../controller/database/__mocks__/databaseConnection';
+import doorSingletonMock from '../../../model/__mocks__/doorSingleton.mock';
 
 jest.mock('../databaseFactory');
 jest.mock('../databaseConnection');

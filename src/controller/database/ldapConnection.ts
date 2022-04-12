@@ -1,5 +1,5 @@
-import {DatabaseConfig} from '../model/databaseConfig';
-import {LanguageService} from '../services/language.service';
+import {DatabaseConfig} from '../../model/databaseConfig';
+import {LanguageService} from '../../services/language.service';
 import {
     AlreadyExistsError,
     EntryNotFound,
@@ -8,19 +8,19 @@ import {
     ReachDatabaseError,
     ResponseError,
     UnknownError
-} from '../model/errors';
+} from '../../model/errors';
 import {Url} from 'shared-utilities';
 import {DatabaseConnection, DatabaseEntryObject} from './databaseConnection';
-import {DatabaseLocation} from './databaseLocation';
-import {DatabaseCredentials} from './databaseCredentials';
-import {DatabaseEntry} from './databaseEntry';
-import {DatabaseEntryProperty} from './databaseEntryProperty';
-import {LdapDN} from './ldapDN';
-import {LdapFilter} from './ldapFilter';
+import {DatabaseLocation} from '../../model/database/databaseLocation';
+import {DatabaseCredentials} from '../../model/database/databaseCredentials';
+import {DatabaseEntry} from '../../model/database/databaseEntry';
+import {DatabaseEntryProperty} from '../../model/database/databaseEntryProperty';
+import {LdapDN} from '../../model/database/ldapDN';
+import {LdapFilter} from '../../model/database/ldapFilter';
 
 import LDAP, {Change, Client, Error, SearchCallbackResponse, SearchOptions} from 'ldapjs';
 
-import {ERROR_MESSAGES} from '../res/error.messages';
+import {ERROR_MESSAGES} from '../../res/error.messages';
 
 const ldapEscape = require('ldap-escape');
 

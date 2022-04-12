@@ -1,8 +1,8 @@
 import { Identifier } from 'shared-utilities';
-import { SqlFilter } from './sqlFilter';
-import { DatabaseConfig } from '../model/databaseConfig';
-import { DatabaseCredentials } from './databaseCredentials';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
+import { SqlFilter } from '../../model/database/sqlFilter';
+import { DatabaseConfig } from '../../model/databaseConfig';
+import { DatabaseCredentials } from '../../model/database/databaseCredentials';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
 import { DatabaseFactory } from './databaseFactory';
 import { SqlConnection } from './sqlConnection';
 /**

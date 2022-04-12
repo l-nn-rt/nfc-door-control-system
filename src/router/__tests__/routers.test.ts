@@ -2,7 +2,7 @@ import request from "supertest"
 import express from "express";
 import {UserRouter} from "../user.router";
 import userControllerMock from "../../controller/__mocks__/user.controller.mock";
-import databaseFactoryMock from "../../database/__mocks__/databaseFactory";
+import databaseFactoryMock from "../../controller/database/__mocks__/databaseFactory";
 import sessions from "express-session";
 import {EventRouter} from "../event.router";
 import eventControllerMock from "../../controller/__mocks__/event.controller.mock";

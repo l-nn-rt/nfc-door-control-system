@@ -4,7 +4,7 @@ import { SessionMidware } from '../midware/session.midware';
 import { EventController } from '../controller/event.controller';
 import { AuthenticationMidware } from '../midware/authentication.midware';
 import { AbstractRouter } from './abstract.router';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseFactory } from '../controller/database/databaseFactory';
 
 /**
  * Setups the router for event

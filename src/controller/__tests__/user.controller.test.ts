@@ -1,15 +1,15 @@
 import {UserController} from "../user.controller";
 import doorControllerMock from "../__mocks__/door.controller";
-import databaseFactoryMock from "../../database/__mocks__/databaseFactory";
+import databaseFactoryMock from "../database/__mocks__/databaseFactory";
 import {getMockReq, getMockRes} from "@jest-mock/express";
-import databaseConnectionMock from "../../database/__mocks__/databaseConnection";
+import databaseConnectionMock from "../database/__mocks__/databaseConnection";
 import {DoorConnectError, errorHandling, ReachDatabaseError} from "../../model/errors";
 import sessionMidwareMock from "../../midware/__mocks__/session.midware.mock";
 import {NextFunction, Request, Response} from "express";
 import {SessionMidware} from "../../midware/session.midware";
-import databaseServiceMock from "../../database/__mocks__/database.service.mock";
+import databaseServiceMock from "../../services/database/__mocks__/database.service.mock";
 import {User} from "../../model/user.model";
-import {DatabaseService} from "../../database/database.service";
+import {DatabaseService} from "../../services/database/database.service";
 import {DoorController} from "../door.controller";
 
 

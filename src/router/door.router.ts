@@ -4,7 +4,7 @@ import {PskMidware} from '../midware/psk.midware';
 import {DoorController} from '../controller/door.controller';
 import {SessionMidware} from '../midware/session.midware';
 import {AbstractRouter} from './abstract.router';
-import {DatabaseFactory} from '../database/databaseFactory';
+import {DatabaseFactory} from '../controller/database/databaseFactory';
 
 /**
  * Setups the router for door

@@ -3,8 +3,8 @@ import { LanguageService } from './../../services/language.service';
 import { errorHandling, InvalidCredentialsError, UnknownError } from './../../model/errors';
 import { getMockRes, getMockReq } from '@jest-mock/express';
 import { AuthenticationMidware } from './../authentication.midware';
-import databaseFactoryMock from '../../database/__mocks__/databaseFactory';
-import databaseConnectionMock from '../../database/__mocks__/databaseConnection';
+import databaseFactoryMock from '../../controller/database/__mocks__/databaseFactory';
+import databaseConnectionMock from '../../controller/database/__mocks__/databaseConnection';
 
 jest.mock('../../database/databaseFactory');
 jest.mock('../../model/errors');

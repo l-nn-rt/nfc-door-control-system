@@ -3,10 +3,10 @@ import { LanguageService } from '../../services/language.service';
 import { AuthenticationError} from '../../model/errors';
 import { getMockRes, getMockReq } from '@jest-mock/express';
 import { errorHandling } from '../../model/errors';
-import databaseFactoryMock from '../../database/__mocks__/databaseFactory';
+import databaseFactoryMock from '../../controller/database/__mocks__/databaseFactory';
 import { DoorSingleton } from '../../model/doorSingleton.model';
 import { PskMidware } from '../psk.midware';
-import databaseConnectionMock from '../../database/__mocks__/databaseConnection';
+import databaseConnectionMock from '../../controller/database/__mocks__/databaseConnection';
 import doorSingletonMock from '../../model/__mocks__/doorSingleton.mock';
 
 let pskMidware: PskMidware;

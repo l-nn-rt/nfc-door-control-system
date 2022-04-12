@@ -1,5 +1,5 @@
 import {DatabaseService} from '../database.service';
-import {DatabaseConnection} from "../databaseConnection";
+import {DatabaseConnection} from "../../../controller/database/databaseConnection";
 
 const databaseServiceMock = jest.createMockFromModule(
     '../database.service'

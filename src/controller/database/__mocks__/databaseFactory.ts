@@ -1,13 +1,13 @@
 import { DatabaseFactory } from '../databaseFactory';
-import databaseConnection from '../../database/__mocks__/databaseConnection';
-import { DatabaseService } from '../database.service';
-import { DatabaseCredentials } from '../databaseCredentials';
-import databaseServiceMock from './database.service.mock';
+import databaseConnection from './databaseConnection';
+import { DatabaseService } from '../../../services/database/database.service';
+import { DatabaseCredentials } from '../../../model/database/databaseCredentials';
+import databaseServiceMock from '../../../services/database/__mocks__/database.service.mock';
 import { DatabaseConnection } from '../databaseConnection';
 import { Identifier } from 'shared-utilities';
-import { DatabaseFilter } from '../databaseFilter';
-import { DatabaseEntryProperty } from '../databaseEntryProperty';
-import { DatabaseConfig } from '../../model/databaseConfig';
+import { DatabaseFilter } from '../../../model/database/databaseFilter';
+import { DatabaseEntryProperty } from '../../../model/database/databaseEntryProperty';
+import { DatabaseConfig } from '../../../model/databaseConfig';
 
 const databaseFactoryMock = jest.createMockFromModule(
     '../databaseFactory'

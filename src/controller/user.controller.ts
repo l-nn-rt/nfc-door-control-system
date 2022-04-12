@@ -11,12 +11,12 @@ import {
     InvalidCredentialsError,
     UnknownError
 } from '../model/errors';
-import { DatabaseCredentials } from '../database/databaseCredentials';
+import { DatabaseCredentials } from '../model/database/databaseCredentials';
 import { DoorController } from './door.controller';
 import { ERROR_MESSAGES } from '../res/error.messages';
 import { LanguageService } from '../services/language.service';
-import { DatabaseService } from '../database/database.service';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseService } from '../services/database/database.service';
+import { DatabaseFactory } from './database/databaseFactory';
 
 const crypto = require('crypto');
 

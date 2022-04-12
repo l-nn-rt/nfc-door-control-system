@@ -1,5 +1,5 @@
 import { SQLAuth, SQLAuthObj } from '../sqlConnection';
-import databaseConfigMock from '../../model/__mocks__/databaseConfig';
+import databaseConfigMock from '../../../model/__mocks__/databaseConfig';
 
 export class Row {
     metadata: {

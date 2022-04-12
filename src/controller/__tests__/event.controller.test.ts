@@ -1,12 +1,12 @@
-import { DatabaseService } from '../../database/database.service';
+import { DatabaseService } from '../../services/database/database.service';
 import { HttpService } from '../../services/http.service';
 
 import { EventController } from '../event.controller';
 
 import notificationControllerMock from '../__mocks__/notification.controller';
-import databaseServiceMock from '../../database/__mocks__/database.service.mock';
+import databaseServiceMock from '../../services/database/__mocks__/database.service.mock';
 import httpServiceMock from '../../services/__mocks__/http.service.mock';
-import databaseFactoryMock from '../../database/__mocks__/databaseFactory';
+import databaseFactoryMock from '../database/__mocks__/databaseFactory';
 
 import { getMockReq, getMockRes } from '@jest-mock/express';
 import { EventSubscriber, Event } from 'shared-utilities';

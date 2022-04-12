@@ -4,7 +4,7 @@ import { AuthenticationError, errorHandling } from '../model/errors';
 import { LanguageService } from '../services/language.service';
 import { ERROR_MESSAGES } from '../res/error.messages';
 import { DoorSingleton } from '../model/doorSingleton.model';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseFactory } from '../controller/database/databaseFactory';
 
 /**
  * Midware to validate the pre shared key (psk) of the {@link DoorSingleton}.

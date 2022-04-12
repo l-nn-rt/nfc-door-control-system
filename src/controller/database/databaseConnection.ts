@@ -1,9 +1,9 @@
 import { Url } from 'shared-utilities';
-import { DatabaseCredentials } from './databaseCredentials';
-import { DatabaseEntry } from './databaseEntry';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
-import { DatabaseFilter } from './databaseFilter';
-import { DatabaseLocation } from './databaseLocation';
+import { DatabaseCredentials } from '../../model/database/databaseCredentials';
+import { DatabaseEntry } from '../../model/database/databaseEntry';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
+import { DatabaseFilter } from '../../model/database/databaseFilter';
+import { DatabaseLocation } from '../../model/database/databaseLocation';
 
 export abstract class DatabaseEntryObject {
     [p: string]: any;
