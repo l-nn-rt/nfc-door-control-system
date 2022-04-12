@@ -12,7 +12,6 @@ const success = jest.fn().mockImplementation((request: express.Request, response
 
 doorControllerMock.open = success;
 doorControllerMock.deleteNfcToken = jest.fn();
-doorControllerMock.setDoorMicrocontroller = success;
 doorControllerMock.updateDoorControllerViaRequest = success;
 doorControllerMock.updateNfcToken = jest.fn();
 
