@@ -11,7 +11,7 @@ import doorSingletonMock from '../../model/__mocks__/doorSingleton.mock';
 
 let pskMidware: PskMidware;
 
-jest.mock('../../database/databaseFactory');
+jest.mock('../../controller/database/databaseFactory');
 jest.mock('../../model/microcontroller');
 jest.mock('../../model/doorSingleton.model');
 jest.mock('../../model/errors');
@@ -25,7 +25,7 @@ beforeAll(() => {
     doorSingletonMock.microcontroller.psk = correctPsk;
 });
 beforeEach(() => {
-    jest.mock('../../database/databaseFactory').clearAllMocks();
+    jest.mock('../../controller/database/databaseFactory').clearAllMocks();
     jest.mock('../../model/doorSingleton.model').clearAllMocks();
     jest.mock('../../model/errors').clearAllMocks();
 

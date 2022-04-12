@@ -213,16 +213,6 @@ describe("door", () => {
 
         expect(doorControllerMock.open).toHaveBeenCalledTimes(1);
     });
-    test("set door microcontroller", async () => {
-        await request(app)
-            .post(doorPath + '/register')
-            .set('Cookie', cookie)
-            .set('psk', "1234")
-            .send({url: "123"})
-            .expect(200);
-
-        expect(doorControllerMock.setDoorMicrocontroller).toHaveBeenCalled();
-    });
     test("update door microcontroller", async () => {
         await request(app)
             .post(doorPath + '/refresh')

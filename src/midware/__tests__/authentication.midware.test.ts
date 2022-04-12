@@ -6,7 +6,7 @@ import { AuthenticationMidware } from './../authentication.midware';
 import databaseFactoryMock from '../../controller/database/__mocks__/databaseFactory';
 import databaseConnectionMock from '../../controller/database/__mocks__/databaseConnection';
 
-jest.mock('../../database/databaseFactory');
+jest.mock('../../controller/database/databaseFactory');
 jest.mock('../../model/errors');
 let authenticationMidware: AuthenticationMidware;
 

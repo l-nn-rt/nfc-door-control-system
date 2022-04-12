@@ -11,7 +11,7 @@ import databaseFactoryMock from '../database/__mocks__/databaseFactory';
 import { getMockReq, getMockRes } from '@jest-mock/express';
 import { EventSubscriber, Event } from 'shared-utilities';
 
-jest.mock('../../database/database.service');
+jest.mock('../../services/database/database.service');
 jest.mock('../../services/http.service');
 
 const n = 10;

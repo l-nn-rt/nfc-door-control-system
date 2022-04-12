@@ -1,13 +1,8 @@
 import { InternalServerError } from '../../../model/errors';
 import { DoorSingleton } from '../../../model/doorSingleton.model';
-import { SqlFilter } from '../../../model/database/sqlFilter';
-import { DatabaseFilter } from '../../../model/database/databaseFilter';
 import { User } from '../../../model/user.model';
-import { DatabaseConfig } from '../../../model/databaseConfig';
 import { DatabaseEntry } from '../../../model/database/databaseEntry';
 import {
-    Url,
-    Hash,
     Username,
     NfcToken,
     Identifier,
@@ -22,11 +17,10 @@ import { DatabaseService } from '../database.service';
 import databaseConfigMock from '../../../model/__mocks__/databaseConfig';
 import databaseConnectionMock from '../../../controller/database/__mocks__/databaseConnection';
 import doorSingletonMock from '../../../model/__mocks__/doorSingleton.mock';
-
-jest.mock('../databaseFactory');
-jest.mock('../databaseConnection');
-jest.mock('../../model/doorSingleton.model');
-jest.mock('../../model/databaseConfig');
+jest.mock('../../../controller/database/databaseFactory');
+jest.mock('../../../controller/database/databaseConnection');
+jest.mock('../../../model/doorSingleton.model');
+jest.mock('../../../model/databaseConfig');
 //jest.requireActual('../../model/doorSingleton.model');
 let databaseService: DatabaseService;
 
@@ -38,34 +32,9 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
-    jest.mock('../databaseFactory').clearAllMocks();
-    jest.mock('../databaseConnection').clearAllMocks();
-    jest.mock('../../model/databaseConfig').restoreAllMocks();
-});
-
-describe('setDoor', () => {
-    const url = new Url('url.test/mock:42');
-    beforeAll(() => {});
-    beforeEach(() => {
-        //@ts-ignore
-        doorSingletonMock.microcontroller.endpoint = url;
-    });
-    it('error setting property', async () => {
-        let error = new Error();
-        databaseConnectionMock.setProperty.mockRejectedValueOnce(error);
-        await expect(databaseService.setDoor(databaseConnectionMock)).rejects.toBe(error);
-    });
-    it('success', async () => {
-        await expect(databaseService.setDoor(databaseConnectionMock)).resolves.not.toThrow();
-        let urlProperty = {
-            ...databaseConfigMock.microcontroller.endpoint,
-            value: url
-        } as DatabaseEntryProperty<Url>;
-        expect(databaseConnectionMock.setProperty).toBeCalledWith(
-            urlProperty,
-            databaseConfigMock.microcontroller.location
-        );
-    });
+    jest.mock('../../../controller/database/databaseFactory').clearAllMocks();
+    jest.mock('../../../controller/database/databaseConnection').clearAllMocks();
+    jest.mock('../../../model/databaseConfig').restoreAllMocks();
 });
 describe('getAllUserNames', () => {
     it('getMany rejects error', async () => {

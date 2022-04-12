@@ -3,7 +3,7 @@ import doorControllerMock from "../__mocks__/door.controller";
 import databaseFactoryMock from "../database/__mocks__/databaseFactory";
 import {getMockReq, getMockRes} from "@jest-mock/express";
 import databaseConnectionMock from "../database/__mocks__/databaseConnection";
-import {DoorConnectError, errorHandling, ReachDatabaseError} from "../../model/errors";
+import { ReachDatabaseError } from "../../model/errors";
 import sessionMidwareMock from "../../midware/__mocks__/session.midware.mock";
 import {NextFunction, Request, Response} from "express";
 import {SessionMidware} from "../../midware/session.midware";
@@ -13,7 +13,7 @@ import {DatabaseService} from "../../services/database/database.service";
 import {DoorController} from "../door.controller";
 
 
-jest.mock('../../database/database.service');
+jest.mock('../../services/database/database.service');
 jest.mock('../../midware/session.midware');
 
 let errorC: ((response: Response) => void) | undefined;

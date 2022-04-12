@@ -110,36 +110,6 @@ describe("seed", () => {
         expect(doorController.seed).toBe(DoorSingleton.getInstance().microcontroller.seed);
     })
 });
-describe("setDoorMicrocontroller", () => {
-    const newEndpoint = "efe";
-    const oldEndpoint = config.doorMicrocontroller.endpoint.value;
-
-    beforeEach(() => {
-        DoorSingleton.getInstance().microcontroller.endpoint = oldEndpoint;
-    });
-
-    test("success", async () => {
-        databaseServiceMock.setDoor.mockResolvedValueOnce();
-        await doorController.setDoorMicrocontroller(getMockReq({body: {endpoint: newEndpoint}}), res);
-        expect(res.status).toHaveBeenCalledWith(200);
-        expect(DoorSingleton.getInstance().microcontroller.endpoint).toBe(newEndpoint);
-    });
-
-    test("database service rejects", async () => {
-        databaseServiceMock.setDoor.mockRejectedValueOnce(new Error());
-        await doorController.setDoorMicrocontroller(getMockReq({body: {endpoint: newEndpoint}}), res);
-        expect(res.status).toHaveBeenCalledWith(400);
-        expect(DoorSingleton.getInstance().microcontroller.endpoint).toBe(oldEndpoint);
-    });
-    test("unexpected error", async () => {
-        // @ts-ignore
-        databaseServiceMock.setDoor.mockReturnValueOnce(undefined);
-        await doorController.setDoorMicrocontroller(getMockReq({body: {endpoint: newEndpoint}}), res);
-
-        expect(res.status).toHaveBeenCalledWith(400);
-        expect(DoorSingleton.getInstance().microcontroller.endpoint).toBe(oldEndpoint);
-    });
-});
 
 describe("updateDoorControllerViaRequest", () => {
     test("success with matching hashes", async () => {
