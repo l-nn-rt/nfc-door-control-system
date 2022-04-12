@@ -10,7 +10,7 @@
 
     "sessionMaxAge": 86400000,
 
-    "whitelist": ["https://192.168.178.85:4201", "https://dc.local/"],
+    "whitelist": ["https://localhost:4201"],
 
     "doorMicrocontroller": {
         "psk": {
@@ -19,7 +19,7 @@
         },
         "endpoint": {
             "name": "endpoint",
-            "value": "https://dc.local"
+            "value": "http://dc.local"
         },
         "seed": "1234",
         "openPath": "/door/",
