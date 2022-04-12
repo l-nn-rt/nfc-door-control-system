@@ -31,7 +31,7 @@
         - Connect a LED to GPIO33 and GND of ESP32
         - Connect a Button to GPIO26 and GND of ESP32
         - Wire the NFC-Reader according to the following diagram:
-    ![](https://i.imgur.com/sRnT4s6.jpg)
+    ![](https://github.com/davidgru/nfc-door-control-system-esp32-firmware/blob/main/esp32-rfid-rc522-wiring-diagram.jpg)
     - In `build_flags` in `platformio.ini` set...
         - `WIFI_SSID` to your wifi ssid
         - `WIFI_PASSWORD` to your wifi password
