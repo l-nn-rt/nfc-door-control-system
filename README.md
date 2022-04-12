@@ -1,4 +1,22 @@
-# Requirements
+For the quickstart of the entire system see [quickstart.md](/quickstart.md).
+
+If you just want to use the API endpoint we offer see [docucmentation.md](/documentation.md).
+
+**Related respositories:**
+
+Required:
+- [shared-utilities](https://github.com/l-nn-rt/nfc-door-control-system-shared-utilitites)
+
+Hardly recommended:
+- [door-controller](https://github.com/davidgru/nfc-door-control-system-esp32-firmware)
+- [pwa](https://github.com/ZaTTTel/nfc-door-control-system-pwa/)
+
+Optional:
+You can extend our system by using event-subscribers. Event-Subscribers can be registert through the pwa an then get notified whenever the bell rings or the door was opend.
+We build an  [esp32-bell](https://github.com/TomThalion/nfc-door-control-system-esp32-Http-bell) and [bots](https://github.com/TomThalion/nfc-door-control-system-bots) for common apps like Discord, Mattermost and Telegram.
+
+
+# Requirements for the main server
 
 -   Node.js
 -   Camera Stream
