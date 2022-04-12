@@ -5,7 +5,6 @@ const databaseServiceMock = jest.createMockFromModule(
     '../database.service'
 ) as jest.Mocked<DatabaseService>;
 
-databaseServiceMock.setDoor = jest.fn();
 databaseServiceMock.getAllUserNames = jest.fn();
 databaseServiceMock.getAllUserNames = jest.fn();
 databaseServiceMock.getAllNfcTokens = jest.fn();

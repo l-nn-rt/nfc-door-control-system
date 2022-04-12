@@ -28,12 +28,6 @@ export class DoorRouter extends AbstractRouter {
             doorController.open.bind(doorController)
         );
         this.router.post(
-            '/register',
-            ValidationMidware.validateDoorLogin,
-            pskMidware.validatePSK.bind(pskMidware),
-            doorController.setDoorMicrocontroller.bind(doorController)
-        );
-        this.router.post(
             '/refresh',
             sessionMidware.validateSession.bind(sessionMidware),
             doorController.updateDoorControllerViaRequest.bind(doorController)

@@ -2,7 +2,6 @@ import { DatabaseLocation } from '../database/databaseLocation';
 import { DatabaseCredentials } from '../database/databaseCredentials';
 import { Password, NfcToken, Username, Identifier, Url, Name } from 'shared-utilities';
 import { DatabaseEntryProperty } from '../database/databaseEntryProperty';
-import { DatabaseEntry } from '../database/databaseEntry';
 import { DatabaseConfig } from '../databaseConfig';
 
 const databaseConfigMock = jest.createMockFromModule(
@@ -39,9 +38,5 @@ databaseConfigMock.eventSubscriber = {
     event: { name: 'eventMock' } as DatabaseEntryProperty<Event>,
     endpoint: { name: 'subscriberEndpointMock' } as DatabaseEntryProperty<Url>,
     label: { name: 'labelMock' } as DatabaseEntryProperty<Name>
-};
-databaseConfigMock.microcontroller = {
-    location: { name: 'microcontrollerLocationMock' } as DatabaseLocation,
-    endpoint: { name: 'microcontrollerEndpointMock' } as DatabaseEntryProperty<Url>
 };
 export default databaseConfigMock;
