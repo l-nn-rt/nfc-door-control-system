@@ -1,10 +1,10 @@
 import { Identifier } from 'shared-utilities';
-import { DatabaseCredentials } from './databaseCredentials';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
+import { DatabaseCredentials } from '../../model/database/databaseCredentials';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
 import { DatabaseFactory } from './databaseFactory';
 import { LdapConnection } from './ldapConnection';
-import { DatabaseConfig } from '../model/databaseConfig';
-import { LdapFilter } from './ldapFilter';
+import { DatabaseConfig } from '../../model/databaseConfig';
+import { LdapFilter } from '../../model/database/ldapFilter';
 import { DatabaseConnection } from './databaseConnection';
 
 const ldapEscape = require('ldap-escape');

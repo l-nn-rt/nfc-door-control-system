@@ -9,9 +9,9 @@ import { HttpService } from '../services/http.service';
 import { DoorConnectError, errorHandling } from '../model/errors';
 import { UserController } from './user.controller';
 import { HttpsConnection } from 'src/model/httpsConnection';
-import { DatabaseService } from '../database/database.service';
+import { DatabaseService } from '../services/database/database.service';
 import { DoorConfig } from '../model/config.model';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseFactory } from './database/databaseFactory';
 
 /**
  * Manages open door and holding the nfc tokens on microcontroller up-to-date

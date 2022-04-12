@@ -1,7 +1,7 @@
 import { Name, Username, NfcToken, Password, Url, Identifier } from 'shared-utilities';
-import { DatabaseLocation } from '../database/databaseLocation';
-import { DatabaseCredentials } from '../database/databaseCredentials';
-import { DatabaseEntryProperty } from '../database/databaseEntryProperty';
+import { DatabaseLocation } from './database/databaseLocation';
+import { DatabaseCredentials } from './database/databaseCredentials';
+import { DatabaseEntryProperty } from './database/databaseEntryProperty';
 
 /**
  * Interface for our database config files

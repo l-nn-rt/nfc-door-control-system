@@ -6,8 +6,8 @@ import { Request, Response } from 'express';
 import { HttpService } from '../services/http.service';
 import { errorHandling, InternalServerError } from '../model/errors';
 import { NotificationController } from './notification.controller';
-import { DatabaseService } from '../database/database.service';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseService } from '../services/database/database.service';
+import { DatabaseFactory } from './database/databaseFactory';
 import { MESSAGES } from '../res/messages';
 
 /**

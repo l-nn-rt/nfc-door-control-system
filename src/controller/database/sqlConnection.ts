@@ -1,22 +1,22 @@
-import { LanguageService } from '../services/language.service';
+import { LanguageService } from '../../services/language.service';
 import { Url } from 'shared-utilities';
 import { ColumnValue, Connection, ConnectionConfig, Request } from 'tedious';
-import { DatabaseConfig } from '../model/databaseConfig';
+import { DatabaseConfig } from '../../model/databaseConfig';
 import {
     AuthenticationError,
     InvalidCredentialsError,
     InternalServerError,
     EntryNotFound,
     ReachDatabaseError
-} from '../model/errors';
+} from '../../model/errors';
 import { DatabaseConnection, DatabaseEntryObject } from './databaseConnection';
-import { DatabaseCredentials } from './databaseCredentials';
-import { DatabaseEntry } from './databaseEntry';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
-import { DatabaseFilter } from './databaseFilter';
-import { DatabaseLocation } from './databaseLocation';
+import { DatabaseCredentials } from '../../model/database/databaseCredentials';
+import { DatabaseEntry } from '../../model/database/databaseEntry';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
+import { DatabaseFilter } from '../../model/database/databaseFilter';
+import { DatabaseLocation } from '../../model/database/databaseLocation';
 import { SqlFactory } from './sqlFactory';
-import { ERROR_MESSAGES } from '../res/error.messages';
+import { ERROR_MESSAGES } from '../../res/error.messages';
 
 /**
  * Es klappt wahrscheinlich nicht mit zu vielen Anfragen...

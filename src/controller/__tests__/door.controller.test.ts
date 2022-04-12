@@ -1,9 +1,9 @@
 import {DoorController} from "../door.controller";
 import {Config} from "../../model/config.model"
-import databaseFactoryMock from "../../database/__mocks__/databaseFactory";
+import databaseFactoryMock from "../database/__mocks__/databaseFactory";
 import {getMockReq, getMockRes} from "@jest-mock/express";
-import {DatabaseService} from "../../database/database.service";
-import databaseServiceMock from "../../database/__mocks__/database.service.mock";
+import {DatabaseService} from "../../services/database/database.service";
+import databaseServiceMock from "../../services/database/__mocks__/database.service.mock";
 import {HttpService} from "../../services/http.service";
 import httpServiceMock from "../../services/__mocks__/http.service.mock";
 import userControllerMock from "../__mocks__/user.controller.mock";

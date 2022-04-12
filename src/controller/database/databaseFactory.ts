@@ -1,10 +1,10 @@
 import { Identifier } from 'shared-utilities';
 import { DatabaseConnection } from './databaseConnection';
-import { DatabaseCredentials } from './databaseCredentials';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
-import { DatabaseService } from './database.service';
-import { DatabaseConfig } from '../model/databaseConfig';
-import { DatabaseFilter } from './databaseFilter';
+import { DatabaseCredentials } from '../../model/database/databaseCredentials';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
+import { DatabaseService } from '../../services/database/database.service';
+import { DatabaseConfig } from '../../model/databaseConfig';
+import { DatabaseFilter } from '../../model/database/databaseFilter';
 
 /**
  * Abstract factory for Databases.

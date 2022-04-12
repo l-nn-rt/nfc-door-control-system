@@ -1,5 +1,5 @@
-import {SqlFactory} from './database/sqlFactory';
-import {LdapFactory} from './database/ldapFactory';
+import {SqlFactory} from './controller/database/sqlFactory';
+import {LdapFactory} from './controller/database/ldapFactory';
 import express, {Router} from 'express';
 import sessions from 'express-session';
 import cookieParser from 'cookie-parser';
@@ -11,7 +11,7 @@ import * as https from 'https';
 import {HostName} from 'shared-utilities';
 
 import {LoggerMidware} from './midware/logger.midware';
-import {DatabaseFactory} from './database/databaseFactory';
+import {DatabaseFactory} from './controller/database/databaseFactory';
 import {Config} from './model/config.model';
 import {DatabaseConfig} from './model/databaseConfig';
 import {CameraService} from './services/camera.service';

@@ -1,21 +1,21 @@
-import { ERROR_MESSAGES } from './../../res/error.messages';
-import { LanguageService } from './../../services/language.service';
-import { SqlFactory } from './../sqlFactory';
+import { ERROR_MESSAGES } from '../../../res/error.messages';
+import { LanguageService } from '../../../services/language.service';
+import { SqlFactory } from '../sqlFactory';
 import { Identifier } from 'shared-utilities';
-import { DatabaseEntryProperty } from './../databaseEntryProperty';
-import { DatabaseLocation } from './../databaseLocation';
+import { DatabaseEntryProperty } from '../../../model/database/databaseEntryProperty';
+import { DatabaseLocation } from '../../../model/database/databaseLocation';
 import { requestMock, Row } from '../__mocks__/tedious.mock';
-import { DatabaseEntry } from './../databaseEntry';
+import { DatabaseEntry } from '../../../model/database/databaseEntry';
 import {
     ReachDatabaseError,
     InvalidCredentialsError,
     InternalServerError,
     EntryNotFound,
     AuthenticationError
-} from './../../model/errors';
-import databaseConfigMock from '../../model/__mocks__/databaseConfig';
-import { DatabaseCredentials } from '../databaseCredentials';
-import { SqlConnection, SQLAuth, SQLAuthObj } from './../sqlConnection';
+} from '../../../model/errors';
+import databaseConfigMock from '../../../model/__mocks__/databaseConfig';
+import { DatabaseCredentials } from '../../../model/database/databaseCredentials';
+import { SqlConnection, SQLAuth, SQLAuthObj } from '../sqlConnection';
 import { Connection, Request } from 'tedious';
 import { connectionMock } from '../__mocks__/tedious.mock';
 import { DatabaseEntryObject } from '../databaseConnection';

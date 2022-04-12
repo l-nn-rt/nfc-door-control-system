@@ -1,6 +1,6 @@
-import { DatabaseConfig } from './../model/databaseConfig';
-import { LanguageService } from '../services/language.service';
-import { DatabaseLocation } from './databaseLocation';
+import { DatabaseConfig } from '../../model/databaseConfig';
+import { LanguageService } from '../language.service';
+import { DatabaseLocation } from '../../model/database/databaseLocation';
 import {
     Username,
     EventSubscriber,
@@ -13,14 +13,14 @@ import {
     SubscriberLabel
 } from 'shared-utilities';
 
-import { User } from '../model/user.model';
-import { DoorSingleton } from '../model/doorSingleton.model';
-import { DatabaseConnection } from './databaseConnection';
-import { DatabaseEntry } from './databaseEntry';
-import { DatabaseEntryProperty } from './databaseEntryProperty';
-import { InternalServerError } from '../model/errors';
-import { ERROR_MESSAGES } from '../res/error.messages';
-import { DatabaseFactory } from './databaseFactory';
+import { User } from '../../model/user.model';
+import { DoorSingleton } from '../../model/doorSingleton.model';
+import { DatabaseConnection } from '../../controller/database/databaseConnection';
+import { DatabaseEntry } from '../../model/database/databaseEntry';
+import { DatabaseEntryProperty } from '../../model/database/databaseEntryProperty';
+import { InternalServerError } from '../../model/errors';
+import { ERROR_MESSAGES } from '../../res/error.messages';
+import { DatabaseFactory } from '../../controller/database/databaseFactory';
 
 /**
  * DatabaseService delegates queries to the {@link DatabaseConnection}

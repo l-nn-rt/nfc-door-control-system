@@ -4,10 +4,10 @@ import auth from 'basic-auth';
 
 import { errorHandling } from '../model/errors';
 import { LanguageService } from '../services/language.service';
-import { DatabaseConnection } from '../database/databaseConnection';
-import { DatabaseCredentials } from '../database/databaseCredentials';
+import { DatabaseConnection } from '../controller/database/databaseConnection';
+import { DatabaseCredentials } from '../model/database/databaseCredentials';
 import { MESSAGES } from '../res/messages';
-import { DatabaseFactory } from '../database/databaseFactory';
+import { DatabaseFactory } from '../controller/database/databaseFactory';
 
 /**
  * Midware for http basic authentication
