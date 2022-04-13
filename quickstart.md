@@ -54,6 +54,7 @@
     ```
     npx http-server -p 4201 --cert ${cert location} --key ${key location} dist -S
     ```
-    - The app will be accessible to all devices that have installed your root-certificate
+    - The app will be accessible to all devices that have installed your root-certificate on `https://localhost:4201`
+ 
 
 You should be able to log into the account with username `Alex` and password `test1234`.
