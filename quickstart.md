@@ -17,9 +17,11 @@
 
 3. Link the shared utilities
     - Clone the GitHub repository [shared-utilities](https://github.com/l-nn-rt/nfc-door-control-system-shared-utilitites.git)
+    - In the cloned direcotry, run `npm install`
     - In the cloned directory, create a global link for the module with `npm link`
 
 4. Start the midware
+    - Clone this GitHub repository
     - Go to config folder to copy the certificates and rename the  key to `server.key` and the cert into `server.cert`.
     - Install dependencies with `npm run init`
     - Start the midware with `npm start`
