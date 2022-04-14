@@ -15,6 +15,7 @@ import { MESSAGES } from '../res/messages';
  * also how EventSubscribers are added, read and deleted.
  *
  * @author Lennart Rak
+ * @author Gregor Peters
  * @version 1.0
  */
 export class EventController {
@@ -162,35 +163,27 @@ export class EventController {
      */
     public async addEventSubscriber(request: Request, response: Response): Promise<void> {
         return new Promise((resolve) => {
-            this.loadEventSubscribers(response)
-                .then(() => {
-                    const eventSubscriber: EventSubscriber = new EventSubscriber(
-                        request.body.endpoint,
-                        request.body.type,
-                        request.body.label
-                    );
-                    try {
-                        DatabaseService.getInstance()
-                            .addEventSubscriber(eventSubscriber, response.locals.databaseConnection)
-                            .then(() => {
-                                this.eventSubscribers.push(eventSubscriber);
-                                response
-                                    .status(200)
-                                    .json({ msg: 'Successfully added eventSubscriber' });
-                                resolve();
-                            })
-                            .catch((error) => {
-                                errorHandling(error, response);
-                                resolve();
-                            });
-                    } catch (error) {
+            const eventSubscriber: EventSubscriber = new EventSubscriber(
+                request.body.endpoint,
+                request.body.type,
+                request.body.label
+            );
+            try {
+                DatabaseService.getInstance()
+                    .addEventSubscriber(eventSubscriber, response.locals.databaseConnection)
+                    .then(() => {
+                        this.eventSubscribers.push(eventSubscriber);
+                        response.status(200).json({ msg: 'Successfully added eventSubscriber' });
+                        resolve();
+                    })
+                    .catch((error) => {
                         errorHandling(error, response);
                         resolve();
-                    }
-                })
-                .catch(() => {
-                    resolve();
-                });
+                    });
+            } catch (error) {
+                errorHandling(error, response);
+                resolve();
+            }
         });
     }
 
