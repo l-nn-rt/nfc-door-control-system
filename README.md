@@ -7,7 +7,7 @@ If you just want to use the API endpoint we offer see [docucmentation.md](/docum
 Required:
 - [shared-utilities](https://github.com/l-nn-rt/nfc-door-control-system-shared-utilitites)
 
-Hardly recommended:
+Highly recommended:
 - [door-controller](https://github.com/davidgru/nfc-door-control-system-esp32-firmware)
 - [pwa](https://github.com/ZaTTTel/nfc-door-control-system-pwa/)
 
