@@ -1,10 +1,10 @@
 # Quickstart Guide
 1. Start the LDAP Database
-    - Import the [docker image](/ldap_backup.tar) using `docker import ldap_backup ldap`
-    - Run the new image on port `10389` using
+    - Run the following image on port `10389` using
     ```
-        docker run ldap -t -i -p 10389:10389 ldap /bin/sh
+        docker run -d -p 10389:10389 greggigon/apacheds
     ```
+    - Use [Apache Directory Studio](https://directory.apache.org/studio/) to import our [schema](./schema.ldif) and [data](./data.ldif). Therefor you can access the database with user: `uid=admin,ou=system` password: `secret`
     
 2. Create SSL certificates
     - Install [mkcert](https://mkcert.org/) and generate a Root-CA certificate
