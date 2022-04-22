@@ -1,11 +1,14 @@
 # Quickstart Guide
+
 1. Start the LDAP Database
     - Run the following image on port `10389` using
     ```
         docker run -d -p 10389:10389 greggigon/apacheds
     ```
-    - Use [Apache Directory Studio](https://directory.apache.org/studio/) to import our [schema](./schema.ldif) and [data](./data.ldif). Therefor you can access the database with user: `uid=admin,ou=system` password: `secret`
-    
+    - Use [Apache Directory Studio](https://directory.apache.org/studio/) to import our [schema](./schema.ldif)
+      and [data](./data.ldif). Using this, you can access the database with user: `uid=admin,ou=system`
+      password: `secret`
+
 2. Create SSL certificates
     - Install [mkcert](https://mkcert.org/) and generate a Root-CA certificate
     - Move to the directory in which the certificate should be saved.
@@ -16,27 +19,29 @@
     - Remember the location of the certificates
 
 3. Link the shared utilities
-    - Clone the GitHub repository [shared-utilities](https://github.com/l-nn-rt/nfc-door-control-system-shared-utilitites.git)
-    - In the cloned direcotry, run `npm install`
+    - Clone the GitHub
+      repository [shared-utilities](https://github.com/l-nn-rt/nfc-door-control-system-shared-utilitites.git)
+    - In the cloned directory, run `npm install`
     - In the cloned directory, create a global link for the module with `npm link`
 
 4. Start the midware
     - Clone this GitHub repository
-    - Go to config folder to copy the certificates and rename the  key to `server.key` and the cert into `server.cert`.
+    - Enter the config folder to copy the certificates and rename the key to `server.key` and the cert into `server.cert`.
     - Install dependencies with `npm run init`
     - Start the midware with `npm start`
 
 5. Start the door-controller
-    - Clone the GitHub repository for the [door-controller](https://github.com/davidgru/nfc-door-controll-system-esp32-firmware)
+    - Clone the GitHub repository for
+      the [door-controller](https://github.com/davidgru/nfc-door-controll-system-esp32-firmware)
     - Wiring
         - Connect a LED to GPIO25 and GND of ESP32
         - Connect a LED to GPIO33 and GND of ESP32
         - Connect a Button to GPIO26 and GND of ESP32
         - Wire the NFC-Reader according to the following diagram:
-    ![](https://github.com/davidgru/nfc-door-control-system-esp32-firmware/blob/main/esp32-rfid-rc522-wiring-diagram.jpg)
+          ![](https://github.com/davidgru/nfc-door-control-system-esp32-firmware/blob/main/esp32-rfid-rc522-wiring-diagram.jpg)
     - In `build_flags` in `platformio.ini` set...
-        - `WIFI_SSID` to your wifi ssid
-        - `WIFI_PASSWORD` to your wifi password
+        - `WIFI_SSID` to your Wi-Fi ssid
+        - `WIFI_PASSWORD` to your Wi-Fi password
         - `DC_MIDWARE_BASE_URL` to `https://$(midware_url)/`
         - `DC_SERVER_SECURE` to `false`
     - Connect the ESP32 to a USB port
@@ -55,6 +60,5 @@
     npx http-server -p 4201 --cert ${cert location} --key ${key location} dist -S
     ```
     - The app will be accessible to all devices that have installed your root-certificate on `https://localhost:4201`
- 
 
 You should be able to log into the account with username `Alex` and password `test1234`.
