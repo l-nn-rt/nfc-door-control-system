@@ -1,0 +1,143 @@
+version: 1
+
+dn: ou=users,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: cn=Erik,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Erik
+sn: Maier
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: cn=Tom,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Tom
+sn: HalbesErdbeerMarmeladenBrotMitHonig
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: dc=example,dc=com
+objectclass: domain
+objectclass: top
+dc: example
+
+dn: cn=testUser,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: testUser
+sn: User
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: cn=David,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: David
+sn: Gelb
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: endpoint=http://10.12.180.120:3333/subscriber/door/,ou=eventSubscribers,
+ dc=example,dc=com
+objectClass: eventsubscriber
+objectClass: top
+endpoint: http://10.12.180.120:3333/subscriber/door/
+eventtype: DOOR_OPENED
+displayName: Mattermost
+
+dn: cn=Lennart,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Lennart
+sn: Schmitt
+nfcToken: 46b881c4e363c6d12616f45c2bcac49bb15437a0a65792167069fbc9689831f3
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: cn=Till,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Till
+sn: Eulenspiegel
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: ou=eventSubscribers,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: eventSubscribers
+
+dn: cn=Gregor,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Gregor
+sn: Schmidt
+nfcToken: 4df9e4f67a838fe4b1032fc1bf149acab35e80e9a8fd148a58f79e35e51d9903
+userPassword:: e1NTSEF9dkRnUW1GNjVMdTBDcDJjWHk4ZFUwbklTNkZZZjd0NHZxZW1STGc9P
+ Q==
+
+dn: cn=Peter,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Peter
+sn: Peters
+userPassword:: e1NTSEF9dkRnUW1GNjVMdTBDcDJjWHk4ZFUwbklTNkZZZjd0NHZxZW1STGc9P
+ Q==
+
+dn: cn=Alex,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
+objectClass: top
+cn: Alex
+sn: Schmied
+nfcToken: 465a69f6cfc7df879be5ec77ea45f1d8b9a45599d7f4fa69d7291dfb2052a7a0
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
+
+dn: endpoint=http://10.12.180.120:1111/subscriber/bell/,ou=eventSubscribers,
+ dc=example,dc=com
+objectClass: eventsubscriber
+objectClass: top
+endpoint: http://10.12.180.120:1111/subscriber/bell/
+eventtype: BELL_RUNG
+displayName: Telegram
+
+dn: endpoint=http://10.12.180.120:2222/subscriber/bell,ou=eventSubscribers,d
+ c=example,dc=com
+objectClass: eventsubscriber
+objectClass: top
+endpoint: http://10.12.180.120:2222/subscriber/bell
+eventtype: BELL_RUNG
+displayName: Discord Bot
+
