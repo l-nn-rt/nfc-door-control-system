@@ -1,5 +1,10 @@
 version: 1
 
+dn: dc=example,dc=com
+objectclass: domain
+objectclass: top
+dc: example
+
 dn: ou=users,dc=example,dc=com
 objectClass: organizationalUnit
 objectClass: top
@@ -27,11 +32,6 @@ sn: HalbesErdbeerMarmeladenBrotMitHonig
 userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
  Q==
 
-dn: dc=example,dc=com
-objectclass: domain
-objectclass: top
-dc: example
-
 dn: cn=testUser,ou=users,dc=example,dc=com
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
@@ -54,13 +54,16 @@ sn: Gelb
 userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
  Q==
 
-dn: endpoint=http://10.12.180.120:3333/subscriber/door/,ou=eventSubscribers,
- dc=example,dc=com
-objectClass: eventsubscriber
+dn: cn=Till,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: tecouser
 objectClass: top
-endpoint: http://10.12.180.120:3333/subscriber/door/
-eventtype: DOOR_OPENED
-displayName: Mattermost
+cn: Till
+sn: Eulenspiegel
+userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
+ Q==
 
 dn: cn=Lennart,ou=users,dc=example,dc=com
 objectClass: inetOrgPerson
@@ -73,24 +76,8 @@ sn: Schmitt
 nfcToken: 46b881c4e363c6d12616f45c2bcac49bb15437a0a65792167069fbc9689831f3
 userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
  Q==
-
-dn: cn=Till,ou=users,dc=example,dc=com
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: tecouser
-objectClass: top
-cn: Till
-sn: Eulenspiegel
-userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
- Q==
-
-dn: ou=eventSubscribers,dc=example,dc=com
-objectClass: organizationalUnit
-objectClass: top
-ou: eventSubscribers
-
-dn: cn=Gregor,ou=users,dc=example,dc=com
+ 
+ dn: cn=Gregor,ou=users,dc=example,dc=com
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -124,6 +111,19 @@ sn: Schmied
 nfcToken: 465a69f6cfc7df879be5ec77ea45f1d8b9a45599d7f4fa69d7291dfb2052a7a0
 userPassword:: e1NTSEF9VHdYVFM2NmhIRkpnaUVkbjY3QmNaeThJWGhJV2NDQm85K1MwSmc9P
  Q==
+
+dn: ou=eventSubscribers,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: eventSubscribers
+
+dn: endpoint=http://10.12.180.120:3333/subscriber/door/,ou=eventSubscribers,
+ dc=example,dc=com
+objectClass: eventsubscriber
+objectClass: top
+endpoint: http://10.12.180.120:3333/subscriber/door/
+eventtype: DOOR_OPENED
+displayName: Mattermost
 
 dn: endpoint=http://10.12.180.120:1111/subscriber/bell/,ou=eventSubscribers,
  dc=example,dc=com
